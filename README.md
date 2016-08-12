@@ -18,10 +18,10 @@ This app allows a user to enter the meals they've eaten in a day. Meal name, cal
 
 4. Now navigate to the 'meal_tracker' folder and enter these commands in the terminal:
 
-* '$ npm install' 
-*	'$ bower install'
-*	'$ gulp build'
-*	'$ gulp serve'
+  * '$ npm install' 
+  *	'$ bower install'
+  *	'$ gulp build'
+  *	'$ gulp serve'
 
 5. Your browser should then open to http://localhost:3000.
 

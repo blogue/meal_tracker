@@ -20,10 +20,10 @@ export class AppComponent {
   public meals: Meal[];
   constructor(){
     this.meals = [
-      new Meal("Spaghetti & Meatballs", "Large bowl of spaghetti with maranara", 1500),
-      new Meal("Spaghetti & Garlic bread", "Heaping pile of spaghetti with a generous helping of garlic bread", 2000),
-      new Meal("Spaghettic & Linguini", "Two pastas", 1750),
-      new Meal("Spinach Salad w/ Vinaigrette", "Only ate half", 150)
+      new Meal("Spaghetti & Meatballs", "Large bowl of spaghetti with maranara and meatballs", 1500),
+      new Meal("Baked Ziti & Garlic bread", "Heaping pile of ziti with a generous helping of garlic bread.", 2000),
+      new Meal("Manicotti & Linguini with Chianti", "Two pastas enter, one man leaves.", 1750),
+      new Meal("Spinach Salad w/ Vinaigrette", "Only ate half. Stuffed to the rafters.", 150)
     ];
   }
   mealWasSelected(clickedMeal: Meal): void{

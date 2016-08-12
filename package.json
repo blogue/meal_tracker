@@ -1,5 +1,5 @@
 {
-  "name": "angular2-skeleton-app",
+  "name": "Meal Tracker",
   "version": "1.0.0",
   "scripts": {
     "start": "npm run tsc:w",

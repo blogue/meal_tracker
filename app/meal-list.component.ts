@@ -3,15 +3,17 @@ import { Meal } from './meal.model';
 import { MealComponent } from './meal.component';
 import { NewMealComponent } from './new-meal.component';
 import { EditMealComponent } from './edit-meal.component';
+import { CalorieTotalDisplay } from './calorie-total.component';
 import { CaloriePipe } from './calorie.pipe';
 import { SortPipe } from './sort.pipe';
+
 
 @Component({
   selector: 'meal-list',
   inputs: ['mealList'],
   outputs: ['onMealSelect'],
   pipes: [CaloriePipe, SortPipe],
-  directives: [MealComponent, NewMealComponent, EditMealComponent],
+  directives: [MealComponent, NewMealComponent, EditMealComponent, CalorieTotalDisplay],
   template:`
   <div class="container">
     <label>Fitler by Calories:  </label>
@@ -31,6 +33,9 @@ import { SortPipe } from './sort.pipe';
       [class.selected]="currentMeal === selectedMeal"
       [meal]="currentMeal">
     </meal-display>
+    <calorie-total 
+      [mealList]="mealList">
+    </calorie-total>
     <edit-meal *ngIf="selectedMeal"
       [meal]="selectedMeal">
     </edit-meal>

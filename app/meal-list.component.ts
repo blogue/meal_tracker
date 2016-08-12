@@ -4,12 +4,13 @@ import { MealComponent } from './meal.component';
 import { NewMealComponent } from './new-meal.component';
 import { EditMealComponent } from './edit-meal.component';
 import { CaloriePipe } from './calorie.pipe';
+import { SortPipe } from './sort.pipe';
 
 @Component({
   selector: 'meal-list',
   inputs: ['mealList'],
   outputs: ['onMealSelect'],
-  pipes: [CaloriePipe],
+  pipes: [CaloriePipe, SortPipe],
   directives: [MealComponent, NewMealComponent, EditMealComponent],
   template:`
   <div class="container">
@@ -19,7 +20,13 @@ import { CaloriePipe } from './calorie.pipe';
       <option value="low">Low Calories</option>
       <option value="high">High Calories</option>
     </select>
-    <meal-display *ngFor="#currentMeal of mealList | calorie:filterCalories"
+    <label>Sort by: </label>
+    <select (change)="onChangeSort($event.target.value)" class="filter">
+      <option value="all" selected="selected">Unsorted</option>
+      <option value="calories">Calories</option>
+      <option value="name">Name</option>
+    </select>
+    <meal-display *ngFor="#currentMeal of mealList | calorie:filterCalories | sort:sortByProperty"
       (click)="mealClicked(currentMeal)"
       [class.selected]="currentMeal === selectedMeal"
       [meal]="currentMeal">
@@ -38,6 +45,7 @@ export class MealListComponent {
   public onMealSelect: EventEmitter<Meal>;
   public selectedMeal: Meal;
   public filterCalories: string = "all";
+  public sortByProperty: string = "all";
   constructor(){
     this.onMealSelect = new EventEmitter();
   }
@@ -52,5 +60,8 @@ export class MealListComponent {
   }
   onChangeCalorie(filterOption) {
     this.filterCalories = filterOption;
+  }
+  onChangeSort(sortOption) {
+    this.sortByProperty = sortOption;
   }
 }

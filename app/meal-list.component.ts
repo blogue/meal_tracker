@@ -28,12 +28,13 @@ import { SortPipe } from './sort.pipe';
       <option value="calories">Calories</option>
       <option value="name">Name</option>
     </select>
+    <h1 id="meals">Meals</h1>
     <meal-display *ngFor="#currentMeal of mealList | calorie:filterCalories | sort:sortByProperty"
       (click)="mealClicked(currentMeal)"
       [class.selected]="currentMeal === selectedMeal"
       [meal]="currentMeal">
     </meal-display>
-    <calorie-total 
+    <calorie-total
       [mealList]="mealList">
     </calorie-total>
     <edit-meal *ngIf="selectedMeal"
@@ -60,7 +61,7 @@ export class MealListComponent {
   }
   createMeal(param): void {
     this.mealList.push(
-      new Meal(param[0], param[1], parseInt(param[2]))
+      new Meal(param[0], param[1], parseInt(param[2]), param[3])
     );
   }
   onChangeCalorie(filterOption) {

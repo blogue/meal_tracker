@@ -6,8 +6,12 @@ import { MealListComponent } from './meal-list.component';
   selector: 'my-app',
   directives: [MealListComponent],
   template: `
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Meal Tracker App</h1>
+      </div>
+    </div>
     <div class="container">
-      <h1>Meal Tracker App</h1>
         <meal-list
         [mealList]="meals"
         (onMealSelect)="mealWasSelected">

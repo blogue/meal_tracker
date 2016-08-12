@@ -4,3 +4,10 @@ h1 {
 .selected {
 color: #22bdf0;
 }
+
+.jumbotron {
+  font-family: impact;
+  border-bottom: solid 2px black;
+  color: white;
+  background-color: lightblue;
+}

@@ -9,18 +9,21 @@ This app allows a user to enter the meals they've eaten in a day. Meal name, cal
 
 ## Setup/Installation Requirements
 
-* Clone the github repository.
-* You'll need to have Node installed along with, bower, and gulp. You'll be able to find the latest version of Node here: https://nodejs.org/en/download/
-* Once you have that installed you'll be able to use Node's package manage 'npm'. Enter the following commands in the terminal:
+1. Clone the github repository.
+2. You'll need to have Node installed along with, bower, and gulp. You'll be able to find the latest version of Node here: https://nodejs.org/en/download/
+3. Once you have that installed you'll be able to use Node's package manage 'npm'. Enter the following commands in the terminal:
 
-* '$ npm install gulp --save-dev'
-* '$ npm install bower -g'
+ * '$ npm install gulp -g'
+ * '$ npm install bower -g'
 
-* Now navigate to the 'meal_tracker' and enter these commands in the terminal:
+4. Now navigate to the 'meal_tracker' folder and enter these commands in the terminal:
 
-* '$ npm install' followed by '$ bower install'
-* '$ gulp build' and finally '$ gulp serve'
-* Your browser should then open to http://localhost:3000.
+* '$ npm install' 
+*	'$ bower install'
+*	'$ gulp build'
+*	'$ gulp serve'
+
+5. Your browser should then open to http://localhost:3000.
 
 ## Known Bugs
 
@@ -35,7 +38,10 @@ benjamin.logue73@gmail.com
 * Angular2
 * TypeScript
 * Javascript
-* Node & Bower
+* Bootstrap
+* Node
+* Bower
+* Gulp
 
 ### License
 
